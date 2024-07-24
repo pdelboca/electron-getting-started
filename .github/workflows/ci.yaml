@@ -11,5 +11,7 @@ jobs:
             node-version: 18
         - name: Install
           run: npm install
+        - name: Bundle application
+          run: npm run package
         - name: Test
           run: npm run wdio
