@@ -14,4 +14,4 @@ jobs:
         - name: Bundle application
           run: npm run package
         - name: Test
-          run: npm run wdio
+          run: npm run wdio wdio.github.conf.js
