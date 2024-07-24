@@ -6,7 +6,7 @@ export const config: WebdriverIO.Config = {
         capabilities: [{
             browserName: 'chrome',
             'goog:chromeOptions': {
-                args: ['no-sandbox', 'headless', 'disable-gpu', 'disable-dev-shm-usage', 'remote-debugging-pipe', 'remote-debugging-port=9222']
+                args: ['--no-sandbox']
             }
         }]
     }
