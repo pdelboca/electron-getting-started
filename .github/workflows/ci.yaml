@@ -13,6 +13,9 @@ jobs:
           run: |
             sudo adduser --disabled-password --gecos '' myuser
             sudo usermod -aG sudo myuser
+        - name: Change ownership of repository files
+          run: |
+            sudo chown -R myuser:myuser .
         - name: Install
           run: sudo -u myuser bash -c 'npm install'
         - name: Bundle application
