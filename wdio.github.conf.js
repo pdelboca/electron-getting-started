@@ -55,7 +55,7 @@ exports.config = {
           args: ['headless', 'disable-gpu'],
         },
         'wdio:chromedriverOptions': {
-                version: 'latest' // or specify a known good version
+                version: 'l126.0.6478.182' // or specify a known good version
             }
     }],
     //
