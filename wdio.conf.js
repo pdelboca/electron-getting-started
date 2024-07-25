@@ -50,15 +50,12 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'electron',
-        // Electron service options
-        // see https://webdriver.io/docs/desktop-testing/electron/configuration/#service-options
-        'wdio:electronServiceOptions': {
-            // custom application args
-            appArgs: []
-        }
+        browserName: 'chrome',
+        browserVersion: '126.0.6478.182',
+        'goog:chromeOptions': {
+          args: ['headless', 'no-sandbox', 'disable-gpu', 'disable-dev-shm-usage'],
+        },
     }],
-
     //
     // ===================
     // Test Configurations
@@ -106,7 +103,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['electron'],
+    services: ['selenium-standalone'],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
