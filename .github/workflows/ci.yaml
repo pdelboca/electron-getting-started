@@ -2,7 +2,7 @@ name: CI
 on: [push, pull_request]
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -13,5 +13,8 @@ jobs:
           run: npm install
         - name: Bundle application
           run: npm run package
+        - name: Check chrome version
+          run: google-chrome --version
         - name: Test
-          run: npm run wdio wdio.github.conf.js
+          run: |
+            npm run wdio wdio.github.conf.js
