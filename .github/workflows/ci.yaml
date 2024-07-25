@@ -9,9 +9,13 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 18
+        - name: Create a non-root user
+          run: |
+            sudo adduser --disabled-password --gecos '' myuser
+            sudo usermod -aG sudo myuser
         - name: Install
-          run: npm install
+          run: sudo -u myuser bash -c 'npm install'
         - name: Bundle application
-          run: npm run package
+          run: sudo -u myuser bash -c 'npm run package'
         - name: Test
-          run: npm run wdio wdio.github.conf.js
+          run: sudo -u myuser bash -c 'npm run wdio wdio.github.conf.js'
