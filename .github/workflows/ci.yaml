@@ -9,16 +9,9 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 18
-        - name: Create a non-root user
-          run: |
-            sudo adduser --disabled-password --gecos '' myuser
-            sudo usermod -aG sudo myuser
-        - name: Change ownership of repository files
-          run: |
-            sudo chown -R myuser:myuser .
         - name: Install
-          run: sudo -u myuser bash -c 'npm install'
+          run: npm install
         - name: Bundle application
-          run: sudo -u myuser bash -c 'npm run package'
+          run: npm run package
         - name: Test
-          run: sudo -u myuser bash -c 'npm run wdio wdio.github.conf.js'
+          run: npm run wdio wdio.github.conf.js
