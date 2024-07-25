@@ -51,9 +51,8 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'chrome',
-        //browserVersion: '126.0.6478.182',
         'goog:chromeOptions': {
-          args: ['headless', 'no-sandbox', 'disable-gpu', 'disable-dev-shm-usage'],
+          args: ['headless', 'no-sandbox'],
         },
     }],
     //
@@ -63,7 +62,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'trace',
+    logLevel: 'debug',
     //
     // Set specific log levels per logger
     // loggers:
