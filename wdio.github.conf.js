@@ -52,8 +52,15 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['no-sandbox', 'headless', 'disable-gpu', 'disable-dev-shm-usage', 'remote-debugging-pipe']
-        }
+            args: [
+            '--disable-infobars',
+            '--window-size=1280,800',
+            '--headless',
+            '--no-sandbox',
+            '--disable-gpu',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+        ]}
     }],
     //
     // ===================
