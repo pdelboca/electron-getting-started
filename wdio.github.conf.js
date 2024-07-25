@@ -51,12 +51,10 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'chrome',
+        browserVersion: '126.0.6478.182',
         'goog:chromeOptions': {
           args: ['headless', 'disable-gpu'],
         },
-        'wdio:chromedriverOptions': {
-                version: 'l126.0.6478.182' // or specify a known good version
-            }
     }],
     //
     // ===================
