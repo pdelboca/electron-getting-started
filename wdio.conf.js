@@ -51,8 +51,17 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'electron',
-        'goog:chromeOptions': {
-          args: ['headless', 'no-sandbox'],
+       'wdio:electronServiceOptions': {
+          appArgs: [
+            "--disable-infobars",
+            "--disable-dev-shm-usage",
+            "--no-sandbox",
+            "--remote-debugging-port=9222",
+          ],
+          chromedriver: {
+            port: 9521,
+            logFileName: "wdio-chromedriver.log",
+          },
         },
     }],
     //
