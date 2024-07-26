@@ -15,6 +15,7 @@ jobs:
           run: npm run package
         - name: Check chrome version
           run: google-chrome --version
-        - name: Test
-          run: |
-            npm run wdio
+        - name: Run headless test
+          uses: coactions/setup-xvfb@v1
+          with:
+            run: npm run wdio
